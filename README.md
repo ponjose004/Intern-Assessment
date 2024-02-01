@@ -1,52 +1,62 @@
 # Intern-Assessment
 
-# Project Documentation: Embedding for JSON File with BERT
+# Project Documentation: Text Embeddings with BERT and GloVe
 
 ## Overview
 
-This project focuses on extracting embeddings from textual information in a JSON file using the BERT (Bidirectional Encoder Representations from Transformers) model. The embeddings are then processed, saved in a JSON-compatible form, and can be retrieved for future use.
+This documentation covers two projects: extracting embeddings from textual information in a JSON file using the BERT (Bidirectional Encoder Representations from Transformers) model, and extracting embeddings from a CSV file using the GloVe (Global Vectors for Word Representation) model. The embeddings are processed, saved, and can be utilized for various natural language processing tasks.
 
 ## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Dependencies](#dependencies)
-3. [Dataset](#dataset)
-4. [BERT Model](#bert-model)
-5. [Processing and Embedding](#processing-and-embedding)
-6. [Saving and Retrieving Embeddings](#saving-and-retrieving-embeddings)
-7. [Usage](#usage)
-8. [Conclusion](#conclusion)
-9. [References](#references)
+3. [BERT Project](#bert-project)
+    - 3.1 [Dataset](#bert-dataset)
+    - 3.2 [BERT Model](#bert-model)
+    - 3.3 [Processing and Embedding](#bert-processing-and-embedding)
+    - 3.4 [Saving and Retrieving Embeddings](#bert-saving-and-retrieving-embeddings)
+    - 3.5 [Usage](#bert-usage)
+4. [GloVe Project](#glove-project)
+    - 4.1 [Dataset](#glove-dataset)
+    - 4.2 [GloVe Model](#glove-model)
+    - 4.3 [Processing and Embedding](#glove-processing-and-embedding)
+    - 4.4 [Saving Embeddings](#glove-saving-embeddings)
+    - 4.5 [Usage](#glove-usage)
+5. [Conclusion](#conclusion)
+6. [References](#references)
 
 ## 1. Introduction <a name="introduction"></a>
 
-BERT is a powerful tool for understanding and working with language. This project leverages BERT to extract embeddings from textual information stored in a JSON file. The embeddings are then processed, saved, and can be retrieved for various downstream tasks.
+These projects focus on utilizing state-of-the-art models, BERT and GloVe, to generate embeddings for textual data stored in JSON and CSV files, respectively. The resulting embeddings can be applied to various natural language processing tasks.
 
 ## 2. Dependencies <a name="dependencies"></a>
+
+Ensure the following dependencies are installed before running the code:
 
 - [transformers](https://huggingface.co/transformers/) library
 - [torch](https://pytorch.org/) library
 - [numpy](https://numpy.org/) library
+- [pandas](https://pandas.pydata.org/) library
 
-Ensure these dependencies are installed before running the code.
+## 3. BERT Project <a name="bert-project"></a>
 
-## 3. Dataset <a name="dataset"></a>
+### 3.1 Dataset <a name="bert-dataset"></a>
 
-The dataset is provided as a JSON file ('entries.json'). It contains textual information in various fields.
+The dataset is provided as a JSON file ('entries.json'). Textual information is extracted from various fields.
 
-## 4. BERT Model <a name="bert-model"></a>
+### 3.2 BERT Model <a name="bert-model"></a>
 
 BERT, or Bidirectional Encoder Representations from Transformers, is used in this project. The 'bert-base-uncased' model is employed for tokenization and embedding.
 
-## 5. Processing and Embedding <a name="processing-and-embedding"></a>
+### 3.3 Processing and Embedding <a name="bert-processing-and-embedding"></a>
 
 Textual information from the JSON file is extracted, tokenized using BERT's tokenizer, and then passed through the BERT model. The embeddings are obtained by averaging the hidden states. This process is applied to each text entry in the dataset.
 
-## 6. Saving and Retrieving Embeddings <a name="saving-and-retrieving-embeddings"></a>
+### 3.4 Saving and Retrieving Embeddings <a name="bert-saving-and-retrieving-embeddings"></a>
 
 The generated embeddings are saved in a JSON-compatible form using the 'JSON_OUT.json' file. The saved embeddings can be retrieved using the provided code, converting them back to a NumPy array.
 
-## 7. Usage <a name="usage"></a>
+### 3.5 Usage <a name="bert-usage"></a>
 
 To use this code, follow these steps:
 
@@ -55,12 +65,41 @@ To use this code, follow these steps:
 - Run the code to generate and save embeddings.
 - Retrieve embeddings using the provided code.
 
-## 8. Conclusion <a name="conclusion"></a>
+## 4. GloVe Project <a name="glove-project"></a>
 
-This project demonstrates how to use BERT for extracting embeddings from a JSON dataset. The saved embeddings can be reused for various natural language processing tasks.
+### 4.1 Dataset <a name="glove-dataset"></a>
 
-## 9. References <a name="references"></a>
+The dataset is provided as a CSV file ('d1.csv'). Textual information is extracted from each column and combined into tokens.
+
+### 4.2 GloVe Model <a name="glove-model"></a>
+
+The GloVe model is employed to generate word embeddings. The pre-trained GloVe model used here is 'glove.6B.100d.txt'.
+
+### 4.3 Processing and Embedding <a name="glove-processing-and-embedding"></a>
+
+Textual information is extracted from the CSV file, and tokens are generated by combining the content of each column. The pre-trained GloVe embeddings are loaded into a dictionary, and tokens are mapped to their corresponding embeddings.
+
+### 4.4 Saving Embeddings <a name="glove-saving-embeddings"></a>
+
+The generated embeddings are saved in a matrix for further use.
+
+### 4.5 Usage <a name="glove-usage"></a>
+
+To use this code, follow these steps:
+
+- Provide the path to your CSV file in the `data` variable.
+- Provide the path to your GloVe embedding file in the `embedding_file` variable.
+- Make sure the required dependencies are installed.
+- Run the code to generate and save embeddings.
+
+## 5. Conclusion <a name="conclusion"></a>
+
+These projects demonstrate how to use advanced models, BERT and GloVe, to generate embeddings for textual data from JSON and CSV files, respectively. The resulting embeddings can be utilized for various natural language processing tasks.
+
+## 6. References <a name="references"></a>
 
 - [Hugging Face Transformers Library](https://huggingface.co/transformers/)
 - [PyTorch Documentation](https://pytorch.org/)
 - [NumPy Documentation](https://numpy.org/)
+- [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/)
+- [Pandas Documentation](https://pandas.pydata.org/)
