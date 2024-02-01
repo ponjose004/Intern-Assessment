@@ -73,7 +73,7 @@ The dataset is provided as a CSV file ('d1.csv'). Textual information is extract
 
 ### 4.2 GloVe Model <a name="glove-model"></a>
 
-The GloVe model is employed to generate word embeddings. The pre-trained GloVe model used here is 'glove.6B.100d.txt'.
+The GloVe model is employed to generate word embeddings. The pre-trained GloVe model used here is 'glove.6B.100d.txt'. For Downloading this Model use [this link](https://nlp.stanford.edu/data/glove.6B.zip)
 
 ### 4.3 Processing and Embedding <a name="glove-processing-and-embedding"></a>
 
